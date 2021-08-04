@@ -30,7 +30,7 @@ export default function ProspectsForm({ prospect }) {
   }
 
   async function convertToProspect() {
-    let result = await putToProspect(parseInt(prospect.nationalIdNumber));
+    await putToProspect(parseInt(prospect.nationalIdNumber));
   }
 
   async function handleSubmit(event) {
