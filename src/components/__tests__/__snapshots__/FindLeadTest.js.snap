@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Loading correctly 1`] = `
+Array [
+  <h1>
+    Lead Info
+  </h1>,
+  <form
+    onSubmit={[Function]}
+  >
+    <div>
+      <div>
+        <label
+          htmlFor="idNationalNumber"
+        >
+          Id National Number
+        </label>
+        <br />
+        <input
+          id="idNationalNumber"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div>
+      <input
+        className="btn btn-primary"
+        type="submit"
+        value="Find"
+      />
+    </div>
+  </form>,
+]
+`;

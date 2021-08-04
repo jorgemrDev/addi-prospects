@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ProspectsForm correctly 1`] = `
+Array [
+  <h1>
+    Prospect Info
+  </h1>,
+  <form
+    onSubmit={[Function]}
+  >
+    <div>
+      <label
+        htmlFor="national-id-number"
+      >
+        Id National Number
+      </label>
+      <p
+        id="national-id-number"
+      >
+         
+         
+      </p>
+      <br />
+      <p
+        role="alert"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="first-name"
+      >
+        First Name
+      </label>
+      <p
+        htmlFor="first-name"
+      >
+         
+         
+      </p>
+      <br />
+    </div>
+    <div>
+      <label
+        htmlFor="last-name"
+      >
+        Last Name
+      </label>
+      <p
+        htmlFor="last-name"
+      >
+         
+         
+      </p>
+      <br />
+    </div>
+    <div>
+      <label
+        htmlFor="birthdate"
+      >
+        Birthdate
+      </label>
+      <p
+        htmlFor="birthdate"
+      >
+         
+         
+      </p>
+      <br />
+      <p
+        role="alert"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <p
+        htmlFor="email"
+      >
+         
+         
+      </p>
+      <br />
+    </div>
+    <div>
+      <input
+        className="btn btn-primary"
+        disabled={false}
+        type="submit"
+        value="Convert to Prospect"
+      />
+    </div>
+  </form>,
+]
+`;

@@ -54,8 +54,16 @@ export default function FindLead() {
     return result;
   }
 
+  function clear(clear) {
+    setStatus(STATUS.IDLE);
+    setFoundLead(false);
+    setProspect(emptyLead);
+  }
+
   if (foundLead) {
-    return <ProspectsForm prospect={leadInformation}></ProspectsForm>;
+    return (
+      <ProspectsForm prospect={leadInformation} clear={clear}></ProspectsForm>
+    );
   }
 
   return (

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Footer correctly 1`] = `
+<footer>
+  <p>
+    This site is created for technical test for ADDI
+  </p>
+  <p>
+    © JorgeMR
+  </p>
+</footer>
+`;
