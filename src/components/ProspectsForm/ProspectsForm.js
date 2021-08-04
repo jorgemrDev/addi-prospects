@@ -44,7 +44,12 @@ export default function ProspectsForm({ prospect }) {
 
     let errors = getErrors(nationalRegistryInfo[0]);
     let validations = {};
-    if (judicialRecords && judicialRecords[0] && judicialRecords[0].records) {
+    if (
+      judicialRecords &&
+      judicialRecords[0] &&
+      judicialRecords[0].records &&
+      judicialRecords[0].records.length > 0
+    ) {
       validations.judicialRecords = "Have judicial records";
     }
 
