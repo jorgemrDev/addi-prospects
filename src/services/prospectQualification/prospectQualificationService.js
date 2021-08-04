@@ -1,5 +1,5 @@
 export async function getProspectQualification(nationalRegistryInfo) {
-  console.log(nationalRegistryInfo.nationalIdNumber);
-  const response = 61;
+  const response = Math.floor(Math.random() * 101);
+  alert(response);
   return response;
 }

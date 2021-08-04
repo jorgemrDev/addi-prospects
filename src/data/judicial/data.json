@@ -1,12 +1,19 @@
 [
     {
       "id": 123,
+      "nationalIdNumber": 80913296,
+      "firstName": "Jorge",
+      "lastName": "Moreno",
+      "records": []
+    },
+    {
+      "id": 123,
       "nationalIdNumber": 80913297,
       "firstName": "Jorge",
       "lastName": "Moreno",
       "records": [
-        { "id": "17", "description": "judicial record 1" },
-        { "id": "18", "description": "judicial record 1" }
+        { "id": "19", "description": "judicial record 10" },
+        { "id": "20", "description": "judicial record 11" }
       ]
     },
     {
@@ -14,9 +21,20 @@
       "nationalIdNumber": 80913298,
       "firstName": "Jorge",
       "lastName": "Moreno",
-      "records": [
-        { "id": "19", "description": "judicial record 10" },
-        { "id": "20", "description": "judicial record 11" }
-      ]
+      "records": []
+    },
+    {
+      "id": 123,
+      "nationalIdNumber": 80913299,
+      "firstName": "Jorge",
+      "lastName": "Moreno",
+      "records": []
+    },
+    {
+      "id": 123,
+      "nationalIdNumber": 80913200,
+      "firstName": "Jorge",
+      "lastName": "Moreno",
+      "records": []
     }
   ]
