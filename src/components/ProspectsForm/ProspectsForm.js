@@ -77,7 +77,18 @@ export default function ProspectsForm({ prospect, clear }) {
   }
 
   if (status === STATUS.COMPLETED) {
-    return <h1>Succesfully converted to Prospect!</h1>;
+    return (
+      <>
+        <h1>Succesfully converted to Prospect!</h1>
+        <div>
+          <input
+            className="btn btn-primary"
+            value="Back To Find Lead"
+            onClick={backto}
+          />
+        </div>{" "}
+      </>
+    );
   }
 
   return (
