@@ -71,6 +71,7 @@ export default function FindLead() {
           </ul>
         </div>
       )}
+
       <form onSubmit={handleSubmit}>
         <div>
           <div>
@@ -88,6 +89,11 @@ export default function FindLead() {
           <input type="submit" className="btn btn-primary" value="Find" />
         </div>
       </form>
+      {status === STATUS.COMPLETED && !foundLead && (
+        <div role="alert">
+          <p>Document not found</p>
+        </div>
+      )}
     </>
   );
 }
