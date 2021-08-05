@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ToProspect from "./pages/ToProspect";
 import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
             <Contact></Contact>
           </Route>
           <Route path="/about" exact={true}>
-            <ToProspect></ToProspect>
+            <AboutUs></AboutUs>
           </Route>
         </Switch>
       </Router>
