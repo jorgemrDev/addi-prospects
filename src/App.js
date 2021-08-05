@@ -4,10 +4,6 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ToProspect from "./pages/ToProspect";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-//import Detail from "./Detail.class";
-//import Cart from "./Cart";
-//import Checkout from "./Checkout.class";
-//import { useCart } from "./cartContext";
 
 export default function App() {
   //const { dispatch } = useCart();
@@ -17,6 +13,12 @@ export default function App() {
         <Header />
         <Switch>
           <Route path="/" exact={true}>
+            <ToProspect></ToProspect>
+          </Route>
+          <Route path="/contact" exact={true}>
+            <ToProspect></ToProspect>
+          </Route>
+          <Route path="/about" exact={true}>
             <ToProspect></ToProspect>
           </Route>
         </Switch>
