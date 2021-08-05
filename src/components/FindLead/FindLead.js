@@ -54,7 +54,7 @@ export default function FindLead() {
     return result;
   }
 
-  function clear(clear) {
+  function clear() {
     setStatus(STATUS.IDLE);
     setFoundLead(false);
     setProspect(emptyLead);

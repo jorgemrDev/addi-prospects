@@ -3,6 +3,7 @@ import { getPerson } from "../../services/national-registry/nationalRegistryServ
 import { getJudicialRecords } from "../../services/judicialRecords/judicialRecordsService";
 import { getProspectQualification } from "../../services/prospectQualification/prospectQualificationService";
 import { putToProspect } from "../../services/crm/crmService";
+import ClearSearchButton from "../ClearSearchButton";
 import "./ProspectsForm.css";
 
 const STATUS = {
@@ -60,10 +61,6 @@ export default function ProspectsForm({ prospect, clear }) {
     await putToProspect(parseInt(prospect.nationalIdNumber));
   }
 
-  function backto() {
-    clear();
-  }
-
   async function handleSubmit(event) {
     event.preventDefault();
     setStatus(STATUS.SUBMITTING);
@@ -99,13 +96,7 @@ export default function ProspectsForm({ prospect, clear }) {
     return (
       <>
         <h1>Succesfully converted to Prospect!</h1>
-        <div>
-          <input
-            className="btn btn-primary"
-            value="Back To Find Lead"
-            onClick={backto}
-          />
-        </div>{" "}
+        <ClearSearchButton clearSearch={clear}></ClearSearchButton>
       </>
     );
   }
@@ -170,13 +161,7 @@ export default function ProspectsForm({ prospect, clear }) {
             disabled={status === STATUS.SUBMITTING}
           />
         </div>
-        <div>
-          <input
-            className="btn btn-primary"
-            value="Back To Find Lead"
-            onClick={backto}
-          />
-        </div>
+        <ClearSearchButton clearSearch={clear}></ClearSearchButton>
       </form>
     </>
   );
