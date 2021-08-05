@@ -14,19 +14,45 @@ const STATUS = {
 
 export default function ProspectsForm({ prospect, clear }) {
   const [status, setStatus] = useState(STATUS.IDLE);
-  const [errors, setErrors] = useState({});
-  const [validations, setValidations] = useState({});
-  const isValid =
-    Object.keys(errors).length === 0 && Object.keys(validations).length === 0;
+  const [errors, setErrors] = useState({
+    nationalRegistry: {},
+    validations: {},
+  });
 
-  function getErrors(nationalRegistryData) {
+  const isValid =
+    Object.keys(errors.nationalRegistry).length === 0 &&
+    Object.keys(errors.validations).length === 0;
+
+  function getErrors(
+    nationalRegistryData,
+    judicialRecords,
+    prospectQualification
+  ) {
     const result = {};
+    result.nationalRegistry = {};
+    result.validations = {};
     if (nationalRegistryData.firstName !== prospect.firstName)
-      result.firstName = "First Name different from the National Registry";
+      result.nationalRegistry.firstName =
+        "First Name different from the National Registry";
     if (nationalRegistryData.lastName !== prospect.lastName)
-      result.lastName = "Last Name different from the National Registry";
+      result.nationalRegistry.lastName =
+        "Last Name different from the National Registry";
     if (nationalRegistryData.birthdate !== prospect.birthdate)
-      result.birthdate = "Birthdate different from the National Registry";
+      result.nationalRegistry.birthdate =
+        "Birthdate different from the National Registry";
+
+    if (
+      judicialRecords &&
+      judicialRecords[0] &&
+      judicialRecords[0].records &&
+      judicialRecords[0].records.length > 0
+    ) {
+      result.validations.judicialRecords = "Have judicial records";
+    }
+
+    if (prospectQualification && prospectQualification <= 60) {
+      result.validations.prospectQualification = `The prospect qualification is not greater 60 points as required. Is: ${prospectQualification}`;
+    }
     return result;
   }
 
@@ -47,28 +73,21 @@ export default function ProspectsForm({ prospect, clear }) {
       getJudicialRecords(parseInt(prospect.nationalIdNumber)),
     ]);
 
-    let errors = getErrors(nationalRegistryInfo[0]);
-    let validations = {};
-    if (
-      judicialRecords &&
-      judicialRecords[0] &&
-      judicialRecords[0].records &&
-      judicialRecords[0].records.length > 0
-    ) {
-      validations.judicialRecords = "Have judicial records";
-    }
-
     let prospectQualification = await getProspectQualification(
       nationalRegistryInfo[0]
     );
 
-    if (prospectQualification && prospectQualification <= 60) {
-      validations.prospectQualification = `The prospect qualification is not greater 60 points as required. Is: ${prospectQualification}`;
-    }
+    let errors = getErrors(
+      nationalRegistryInfo[0],
+      judicialRecords,
+      prospectQualification
+    );
 
-    if (Object.keys(errors).length > 0 || Object.keys(validations).length > 0) {
+    if (
+      Object.keys(errors.nationalRegistry).length > 0 ||
+      Object.keys(errors.validations).length > 0
+    ) {
       setErrors(errors);
-      setValidations(validations);
       setStatus(STATUS.SUBMITTED);
     } else {
       await convertToProspect();
@@ -98,8 +117,8 @@ export default function ProspectsForm({ prospect, clear }) {
         <div role="alert">
           <p>The lead cant not be converted to prospect due to:</p>
           <ul>
-            {Object.keys(validations).map((key) => {
-              return <li key={key}>{validations[key]}</li>;
+            {Object.keys(errors.validations).map((key) => {
+              return <li key={key}>{errors.validations[key]}</li>;
             })}
           </ul>
         </div>
@@ -114,21 +133,27 @@ export default function ProspectsForm({ prospect, clear }) {
           <label htmlFor="first-name">First Name</label>
           <p htmlFor="first-name"> {prospect.firstName} </p>
           <br />
-          <p role="alert">{status === STATUS.SUBMITTED && errors.firstName}</p>
+          <p role="alert">
+            {status === STATUS.SUBMITTED && errors.nationalRegistry.firstName}
+          </p>
         </div>
 
         <div>
           <label htmlFor="last-name">Last Name</label>
           <p htmlFor="last-name"> {prospect.lastName} </p>
           <br />
-          <p role="alert">{status === STATUS.SUBMITTED && errors.lastName}</p>
+          <p role="alert">
+            {status === STATUS.SUBMITTED && errors.nationalRegistry.lastName}
+          </p>
         </div>
 
         <div>
           <label htmlFor="birthdate">Birthdate</label>
           <p htmlFor="birthdate"> {prospect.birthdate} </p>
           <br />
-          <p role="alert">{status === STATUS.SUBMITTED && errors.birthdate}</p>
+          <p role="alert">
+            {status === STATUS.SUBMITTED && errors.nationalRegistry.birthdate}
+          </p>
         </div>
 
         <div>
