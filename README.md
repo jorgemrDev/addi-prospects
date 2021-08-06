@@ -1,5 +1,7 @@
 # ADDI prospects application
 
+deployed site: https://festive-benz-7ad17f.netlify.app/
+
 prospects application
 
 For the fake API calls i created async functions (located at ./services folder) that reads from json files (all located on ./data folder, there are a file for every sevice crm, judicial records, national registry)
