@@ -6,6 +6,8 @@ prospects application
 
 For the fake API calls i created async functions (located at ./services folder) that reads from json files (all located on ./data folder, there are a file for every sevice crm, judicial records, national registry)
 
+Unit testing is implemented using Jest and snapshots
+
 for tests you can use this document numbers:
 
 - 80913296: happy path, this user doesnt have judicial records and the data CRM database is same as on national registry
