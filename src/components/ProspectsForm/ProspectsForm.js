@@ -94,10 +94,10 @@ export default function ProspectsForm({ prospect, clear }) {
 
   if (status === STATUS.COMPLETED) {
     return (
-      <>
+      <div class="success-info">
         <h2>Succesfully converted to Prospect!</h2>
         <ClearSearchButton clearSearch={clear}></ClearSearchButton>
-      </>
+      </div>
     );
   }
 
