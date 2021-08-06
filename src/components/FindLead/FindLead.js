@@ -83,10 +83,10 @@ export default function FindLead() {
       <form onSubmit={handleSubmit}>
         <div>
           <div>
-            <label htmlFor="national-number-id">Id National Number</label>
+            <label htmlFor="idNationalNumber">Id National Number</label>
             <br />
             <input
-              id="national-number-id"
+              id="idNationalNumber"
               type="text"
               value={prospect.idNationalNumber}
               onChange={handleChange}
