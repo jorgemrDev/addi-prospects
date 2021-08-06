@@ -69,39 +69,41 @@ export default function FindLead() {
   return (
     <>
       <h1>Lead Info</h1>
-      {!isValid && status === STATUS.SUBMITTED && (
-        <div role="alert">
-          <p>Please fix the following errors:</p>
-          <ul>
-            {Object.keys(errors).map((key) => {
-              return <li key={key}>{errors[key]}</li>;
-            })}
-          </ul>
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit}>
-        <div>
-          <div>
-            <label htmlFor="idNationalNumber">Id National Number</label>
-            <br />
-            <input
-              id="idNationalNumber"
-              type="text"
-              value={prospect.idNationalNumber}
-              onChange={handleChange}
-            />
+      <div class="container">
+        {!isValid && status === STATUS.SUBMITTED && (
+          <div role="alert">
+            <p>Please fix the following errors:</p>
+            <ul>
+              {Object.keys(errors).map((key) => {
+                return <li key={key}>{errors[key]}</li>;
+              })}
+            </ul>
           </div>
-        </div>
-        <div>
-          <input type="submit" className="btn btn-primary" value="Find" />
-        </div>
-      </form>
-      {status === STATUS.COMPLETED && !foundLead && (
-        <div role="alert">
-          <p>Document not found</p>
-        </div>
-      )}
+        )}
+
+        <form onSubmit={handleSubmit}>
+          <div>
+            <div>
+              <label htmlFor="idNationalNumber">Id National Number</label>
+              <br />
+              <input
+                id="idNationalNumber"
+                type="text"
+                value={prospect.idNationalNumber}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div>
+            <input type="submit" className="btn btn-primary" value="Find" />
+          </div>
+        </form>
+        {status === STATUS.COMPLETED && !foundLead && (
+          <div role="alert">
+            <p>Document not found</p>
+          </div>
+        )}
+      </div>
     </>
   );
 }

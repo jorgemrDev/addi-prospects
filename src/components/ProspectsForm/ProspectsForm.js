@@ -94,7 +94,7 @@ export default function ProspectsForm({ prospect, clear }) {
 
   if (status === STATUS.COMPLETED) {
     return (
-      <div class="success-info">
+      <div class="container">
         <h2>Succesfully converted to Prospect!</h2>
         <ClearSearchButton clearSearch={clear}></ClearSearchButton>
       </div>
@@ -104,65 +104,68 @@ export default function ProspectsForm({ prospect, clear }) {
   return (
     <>
       <h1>Prospect Info</h1>
-      {!isValid && (
-        <div role="alert">
-          <p>The lead cant not be converted to prospect due to:</p>
-          <ul>
-            {Object.keys(errors.validations).map((key) => {
-              return <li key={key}>{errors.validations[key]}</li>;
-            })}
-          </ul>
-        </div>
-      )}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="national-id-number">Id National Number</label>
-          <p id="national-id-number"> {prospect.nationalIdNumber} </p>
-        </div>
+      <div class="container">
+        {!isValid && (
+          <div role="alert">
+            <p>The lead cant not be converted to prospect due to:</p>
+            <ul>
+              {Object.keys(errors.validations).map((key) => {
+                return <li key={key}>{errors.validations[key]}</li>;
+              })}
+            </ul>
+          </div>
+        )}
 
-        <div>
-          <label htmlFor="first-name">First Name</label>
-          <p htmlFor="first-name"> {prospect.firstName} </p>
-          <br />
-          <p role="alert">
-            {status === STATUS.SUBMITTED && errors.nationalRegistry.firstName}
-          </p>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="national-id-number">Id National Number</label>
+            <p id="national-id-number"> {prospect.nationalIdNumber} </p>
+          </div>
 
-        <div>
-          <label htmlFor="last-name">Last Name</label>
-          <p htmlFor="last-name"> {prospect.lastName} </p>
-          <br />
-          <p role="alert">
-            {status === STATUS.SUBMITTED && errors.nationalRegistry.lastName}
-          </p>
-        </div>
+          <div>
+            <label htmlFor="first-name">First Name</label>
+            <p htmlFor="first-name"> {prospect.firstName} </p>
+            <br />
+            <p role="alert">
+              {status === STATUS.SUBMITTED && errors.nationalRegistry.firstName}
+            </p>
+          </div>
 
-        <div>
-          <label htmlFor="birthdate">Birthdate</label>
-          <p htmlFor="birthdate"> {prospect.birthdate} </p>
-          <br />
-          <p role="alert">
-            {status === STATUS.SUBMITTED && errors.nationalRegistry.birthdate}
-          </p>
-        </div>
+          <div>
+            <label htmlFor="last-name">Last Name</label>
+            <p htmlFor="last-name"> {prospect.lastName} </p>
+            <br />
+            <p role="alert">
+              {status === STATUS.SUBMITTED && errors.nationalRegistry.lastName}
+            </p>
+          </div>
 
-        <div>
-          <label htmlFor="email">Email</label>
-          <p htmlFor="email"> {prospect.email} </p>
-          <br />
-        </div>
+          <div>
+            <label htmlFor="birthdate">Birthdate</label>
+            <p htmlFor="birthdate"> {prospect.birthdate} </p>
+            <br />
+            <p role="alert">
+              {status === STATUS.SUBMITTED && errors.nationalRegistry.birthdate}
+            </p>
+          </div>
 
-        <div>
-          <input
-            type="submit"
-            className="btn btn-primary"
-            value="Convert to Prospect"
-            disabled={status === STATUS.SUBMITTING}
-          />
-        </div>
-        <ClearSearchButton clearSearch={clear}></ClearSearchButton>
-      </form>
+          <div>
+            <label htmlFor="email">Email</label>
+            <p htmlFor="email"> {prospect.email} </p>
+            <br />
+          </div>
+
+          <div>
+            <input
+              type="submit"
+              className="btn btn-primary"
+              value="Convert to Prospect"
+              disabled={status === STATUS.SUBMITTING}
+            />
+          </div>
+        </form>
+      </div>
+      <ClearSearchButton clearSearch={clear}></ClearSearchButton>
     </>
   );
 }
