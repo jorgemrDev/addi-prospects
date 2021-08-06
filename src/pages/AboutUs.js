@@ -12,7 +12,11 @@ export default function AboutUs() {
         </div>
         <div>
           <p>
-            <a href="https://festive-benz-7ad17f.netlify.app/ " target="_blank">
+            <a
+              href="https://festive-benz-7ad17f.netlify.app/ "
+              target="_blank"
+              rel="noreferrer"
+            >
               deployed site
             </a>
           </p>

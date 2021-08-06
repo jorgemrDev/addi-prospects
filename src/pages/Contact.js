@@ -14,6 +14,7 @@ export default function Contact() {
           <a
             href="https://www.linkedin.com/in/jorge-moreno-rodriguez-b3929544/"
             target="_blank"
+            rel="noreferrer"
           >
             Linkedin Profile
           </a>
