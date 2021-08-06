@@ -125,7 +125,6 @@ export default function ProspectsForm({ prospect, clear }) {
           <div>
             <label htmlFor="first-name">First Name</label>
             <p htmlFor="first-name"> {prospect.firstName} </p>
-            <br />
             <p role="alert">
               {status === STATUS.SUBMITTED && errors.nationalRegistry.firstName}
             </p>
@@ -134,7 +133,6 @@ export default function ProspectsForm({ prospect, clear }) {
           <div>
             <label htmlFor="last-name">Last Name</label>
             <p htmlFor="last-name"> {prospect.lastName} </p>
-            <br />
             <p role="alert">
               {status === STATUS.SUBMITTED && errors.nationalRegistry.lastName}
             </p>
@@ -143,7 +141,6 @@ export default function ProspectsForm({ prospect, clear }) {
           <div>
             <label htmlFor="birthdate">Birthdate</label>
             <p htmlFor="birthdate"> {prospect.birthdate} </p>
-            <br />
             <p role="alert">
               {status === STATUS.SUBMITTED && errors.nationalRegistry.birthdate}
             </p>

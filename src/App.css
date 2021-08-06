@@ -73,7 +73,6 @@ div[role="alert"] {
 
 p[role="alert"] {
   display: inline;
-  margin-left: 10px;
   color: red;
 }
 
