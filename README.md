@@ -1,3 +1,20 @@
+# ADDI prospects application
+
+prospects application
+
+For the fake API calls i created async functions (located at ./services folder) that reads from json files (all located on ./data folder, there are a file for every sevice crm, judicial records, national registry)
+
+for tests you can use this document numbers:
+
+- 80913296: happy path, this user doesnt have judicial records and the data CRM database is same as on national registry
+- 80913297: this user have judicial records
+- 80913298: this user have a different birthdate on crm than on national registry
+- 80913299: for this user all data on CRM is different than on national registry
+
+NOTE: in all cases including happy path can be raised the non prospect qualification score validation as that value is random
+
+you can use that documents to test or feel free to modify the data on the json files
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

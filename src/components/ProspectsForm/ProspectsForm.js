@@ -95,7 +95,7 @@ export default function ProspectsForm({ prospect, clear }) {
   if (status === STATUS.COMPLETED) {
     return (
       <>
-        <h1>Succesfully converted to Prospect!</h1>
+        <h2>Succesfully converted to Prospect!</h2>
         <ClearSearchButton clearSearch={clear}></ClearSearchButton>
       </>
     );

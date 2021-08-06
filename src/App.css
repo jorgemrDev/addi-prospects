@@ -64,6 +64,7 @@ footer {
 form > div {
   margin-bottom: 5px;
   padding-left: 8px;
+  margin-left: 100px;
 }
 
 div[role="alert"] {
